@@ -9,6 +9,7 @@ import Entities.Campaign;
 import Entities.Category;
 import Entities.Game;
 import Entities.Gamer;
+import Entities.PrepaidGameCodeForGift;
 
 public class Main {
 
@@ -32,6 +33,8 @@ public class Main {
 		Category category = new Category();
 		category.setId(1);
 		category.setName("Araba Yarışı");
+		
+	
 		
 		Game game = new Game();
 		game.setId(1);
@@ -72,6 +75,21 @@ public class Main {
 		
 		saleManager.buy(gamer, game, campaigns );
 		
+		Category category2= new Category();
+		category2.setId(2);
+		category2.setName("Ön Ödemeli Hediye Oyun Kartları");
+		
+		PrepaidGameCodeForGift prepaidGameCodeForGift = new PrepaidGameCodeForGift();
+		prepaidGameCodeForGift.setId(2);
+		prepaidGameCodeForGift.setName("118 Liralık Ön Ödemeli Hediye Oyun Kartı");
+		prepaidGameCodeForGift.setCategoryId(category2.getId());
+		prepaidGameCodeForGift.setUnitPrice(100);
+		prepaidGameCodeForGift.setKdv(18);
+		prepaidGameCodeForGift.setAmount(118);
+		prepaidGameCodeForGift.setExpirationDate(LocalDate.of(2022, 12, 12));
+		prepaidGameCodeForGift.setDetail("Satın almalarda kullanılabilecek ön ödemeli kart");
+		
+		saleManager.buy(gamer, prepaidGameCodeForGift);
 	}
 
 }

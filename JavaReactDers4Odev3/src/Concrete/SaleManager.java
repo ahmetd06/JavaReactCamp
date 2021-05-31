@@ -9,7 +9,7 @@ public class SaleManager implements ISaleManager {
 
 	@Override
 	public void buy(Gamer gamer, Product product) {
-		System.out.println(gamer.getFirstName() + " isimli oyuncuya "+ product.getName() + " ürünü indirimsiz "+product.getUnitPrice()+" + KDV ye satıldı");
+		System.out.println(gamer.getFirstName() + " isimli oyuncuya "+ product.getName() + " ürünü indirimsiz "+product.getUnitPrice()*( (100+product.getKdv())/100)+" TL ye satıldı");
 		
 		
 	}
